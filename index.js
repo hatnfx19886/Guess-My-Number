@@ -4,6 +4,8 @@ const scoreElm = document.querySelector('.score');
 const highscoreElm = document.querySelector('.highscore');
 const guessInput = document.querySelector('.guess');
 const body = document.querySelector('body');
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
 
 let secretNumber = Math.trunc(Math.random() * 100) + 1;
 let score = 20;
@@ -58,4 +60,18 @@ document.querySelector('.again').addEventListener('click', function () {
   body.style.backgroundColor = '#000';
   numberElm.style.width = '96px';
   guessInput.value = '';
+  guessInput.removeAttribute('disabled');
 });
+
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+document.querySelector('.help').addEventListener('click', function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+});
+
+document.querySelector('.close').addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);

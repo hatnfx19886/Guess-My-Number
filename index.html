@@ -8,8 +8,24 @@
     <title>Guess My Number</title>
   </head>
   <body>
-    <div class="overlay"></div>
-    <div class="modal"></div>
+    <div class="overlay hidden"></div>
+    <div class="modal hidden">
+      <p class="close btn">X</p>
+      <h2>Rule</h2>
+      <p>
+        <span class="secrect">Secrect Number</span> is a integer between 1 and
+        100 (includes 1 and 100). You have to find it.
+      </p>
+      <p>
+        Each turn, you can guess a number and the game will tell you that your
+        number is lower or higher than
+        <span class="secrect">Secrect Number</span>.
+      </p>
+      <p>
+        You have 20 points. If you guess wrong, you will be decucted 1 point.
+      </p>
+      <p>When your point is 0, Game Over.</p>
+    </div>
     <header>
       <h1>Guess My Number!</h1>
       <p class="between">(Between 1 and 100)</p>
